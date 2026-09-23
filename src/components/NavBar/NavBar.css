@@ -1,0 +1,124 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.navbar-container{
+    width: 220px;    
+    height: 100vh; 
+    flex-shrink: 0;
+    background-color: #fff;
+    border-right: 1px solid rgb(214, 207, 207);
+    transition: width 0.3s ease;
+}
+.navbar-toggle{
+    width:70px;
+}
+/* margin here are the gap in nav */
+.nav-header{
+    display:flex;
+    align-items: center;
+    gap:12px;
+    padding:10px 12px;
+    border-bottom: 1px solid rgb(214, 207, 207);
+    margin:0 12px 20px 12px;  
+}
+.logo-img-container{
+    display:flex;
+    align-items: center;
+    gap:2px
+}
+.logo-img-container h2{
+    font-size:1.50rem;
+}
+.nav-logo{
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+}
+.minimize-btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color:rgb(66, 63, 63);
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Nav list */
+.nav-list-profile-container{
+    display:flex;
+    flex-direction: column;
+    border:1px solid gray;
+    height: 100%;
+}
+.nav-list{
+   margin:12px;
+}
+.nav-dsc{
+    color:rgb(66, 63, 63);
+    font-weight: 550;
+    font-size:0.65rem;
+    text-transform: uppercase;
+}
+.list-container{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+    margin:12px 0 30px 12px;  
+    cursor: pointer;
+}
+.group-nav-container{
+    display:flex;
+    align-items: center;
+    gap:12px;
+    padding:5px;
+    border-radius: 5px;
+    user-select: none;
+}
+.group-nav-container:hover{
+    background-color: rgb(237, 231, 231);
+}
+.list-container svg{
+    color:rgb(66, 63, 63);
+}
+.nav-text{
+    font-size:0.75rem;
+    color:rgb(66, 63, 63);
+}
+/* close tab */
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(214, 207, 207);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+.list-container-close{
+    display:flex;
+    flex-direction: column;
+    gap:12px;
+    margin:12px 0 10px 12px;  
+    cursor: pointer;
+}
+.close-nav-container{
+    border-radius: 5px;
+    user-select: none;
+}
+.close-nav-container svg{
+    color:rgb(66, 63, 63);
+}
+
+/* User profile */
+
+/* Responsiveness */
+@media (max-width:480px) {
+    .navbar-container{
+        width: 220px;
+    }
+    .navbar-toggle{
+        width:70px;
+    }
+}

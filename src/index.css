@@ -1,0 +1,11 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:transparent
+}
+body{
+  font-family: 'DM Sans' , 'Plus Jakarta Sans';
+  overflow: none;
+  background-color: #f5f7fa;
+}
