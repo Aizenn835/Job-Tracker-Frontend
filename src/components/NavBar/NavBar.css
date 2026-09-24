@@ -56,6 +56,7 @@
 }
 .nav-list{
    margin:12px;
+   position: relative;
 }
 .nav-dsc{
     color:rgb(66, 63, 63);
@@ -78,16 +79,8 @@
     border-radius: 5px;
     user-select: none;
 }
-.group-nav-container:hover{
-    background-color: rgb(237, 231, 231);
-}
-.list-container svg{
-    color:rgb(66, 63, 63);
-}
-.nav-text{
-    font-size:0.75rem;
-    color:rgb(66, 63, 63);
-}
+
+
 /* close tab */
 .separator {
   width: 100%;
@@ -103,16 +96,57 @@
     margin:12px 0 10px 12px;  
     cursor: pointer;
 }
-.close-nav-container{
-    border-radius: 5px;
-    user-select: none;
-}
-.close-nav-container svg{
-    color:rgb(66, 63, 63);
-}
+
 
 /* User profile */
+.user-profile{
+    position:fixed;
+    bottom: 1%;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    cursor: pointer;
+}
+.open-profile-container{
+    padding-top:12px;
+    display: flex;
+    gap:12px;
+    align-items: center;
+    overflow:hidden;
+    border-top:1px solid rgb(200, 197, 197);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.user-profile-img{
+    height:38px;
+    width: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.username{
+    font-size:0.825rem;
+    font-weight: 550;
+}
+.user-email{
+    font-size:0.70rem;
+    color:rgb(45, 43, 43);
+}
+/* open close nav */
+.user-profile.nav-open .open-profile-container{
+    display:none;
+    opacity: 0;
+}
+.user-profile.nav-open .close-profile-container{
+    display:flex;
+}
 
+.user-profile.nav-close .open-profile-container{
+    display:flex;
+    opacity: 1;
+}
+.user-profile.nav-close .close-profile-container{
+    display:none;
+}
 /* Responsiveness */
 @media (max-width:480px) {
     .navbar-container{

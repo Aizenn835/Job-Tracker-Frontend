@@ -1,0 +1,27 @@
+.search-container{
+    height:40px;
+    display:flex;
+    align-items: center;
+    border:1px solid rgb(214, 207, 207);
+    padding:10px 12px;
+    gap:12px;
+    border-radius: 12px;
+    width: 100%;
+    min-width: 180px;
+    box-sizing: border-box; 
+}
+.search-container svg{
+    color:rgb(143, 140, 140);
+    flex-shrink: 0;
+}
+.search-input{
+    border:none;
+    outline: none;
+    font-family: 'DM Sans' , 'Plus Jakarta Sans';
+    width: 100%; 
+}
+@media (max-width:480px) {
+    .search-container{
+      width: 50%;
+  }
+}

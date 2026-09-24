@@ -1,0 +1,15 @@
+.group-nav-container{
+    display:flex;
+    align-items: center;
+    gap:12px;
+    padding:5px;
+    border-radius: 5px;
+    user-select: none;
+}
+.group-nav-container svg{
+    color:rgb(66, 63, 63);
+}
+.nav-text{
+    font-size:0.75rem;
+    color:rgb(66, 63, 63);
+}

@@ -1,0 +1,7 @@
+.close-nav-container{
+    border-radius: 5px;
+    user-select: none;
+}
+.close-nav-container svg{
+    color:rgb(66, 63, 63);
+}
