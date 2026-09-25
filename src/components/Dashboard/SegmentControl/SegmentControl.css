@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+}
+.segment-container{
+    display:flex;
+    align-items: center;
+    gap:5px;
+    width: fit-content; 
+    align-self: center; 
+    padding: 12px;
+    background-color: #f1f3f6;
+    border-radius: 10px;
+    border: 1px solid #e8eaed;
+}
+.segment-btn{
+    padding: 6px 20px;
+    background-color: transparent;
+    border-radius: 8px;
+    border:none;
+    font-size:13px;
+    color: #888585;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    font-family: 'DM Sans' , 'Plus Jakarta Sans';
+}
+.segment-btn:hover{
+    background-color: rgba(0,0,0,0.04);
+}
+.segment-btn.active{
+    background-color: #fff;
+    color: #111;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-weight: 600;
+}

@@ -66,8 +66,8 @@ export default function NavBar(){
                     <div className="open-profile-container">
                         <img src={DefaultProfile} alt="Default Profile" className='user-profile-img'/>
                         <div className="user-info">
-                            <p className='username'>Lei Justine Clemente</p>
-                            <span className='user-email'>clemente.leijustine@gmail.com</span>
+                            <p className='username'>Sarah Dela Cruz</p>
+                            <span className='user-email'>sarah.cruz@gmail.com</span>
                         </div>
                     </div>
                     <div className="close-profile-container">

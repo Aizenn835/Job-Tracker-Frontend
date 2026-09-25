@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px;
+}
+
+.dsh-hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 20px 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.header-logo-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.header-logo-container svg {
+    color: rgb(66, 63, 63);
+    flex-shrink: 0;
+}
+
+.header-logo-container h4 {
+    font-weight: 550;
+    font-size: 0.9285rem;
+}
+
+.job-count span {
+    color: rgb(66, 63, 63);
+    font-size: 0.9285rem;
+}
+
+
+@media (max-width: 480px) {
+
+    .dsh-hero-header {
+        justify-content: space-between;
+        padding: 10px 12px;
+        margin: 0;
+    }
+
+    .header-logo-container h4 {
+        font-weight: 550;
+        font-size: 0.9285rem;
+        width: 60%;
+    }
+}
+
+@media (min-width: 330px) and (max-width: 480px) {
+
+    .header-logo-container h4 {
+        width: 70%;
+    }
+}

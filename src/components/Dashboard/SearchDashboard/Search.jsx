@@ -5,7 +5,7 @@ export default function Search(){
     return(
         <div className="search-container">
             <IconSearch stroke={2} size={20}/>
-            <input type="text" placeholder='Search' className='search-input'/>
+            <input type="text" placeholder='Search' name='job-search' className='search-input'/>
         </div>
     );
 }

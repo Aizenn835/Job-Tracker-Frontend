@@ -1,0 +1,80 @@
+.applied-job-container{
+    display:flex;
+    align-items: center;
+    margin-top:12px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    flex-direction: column;
+}
+.segment-search{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding:10px 12px;
+    gap:12px;
+    border:1px solid gb(200, 197, 197);
+    
+}
+.search-list-container{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: 400px;
+    border:1px solid rgb(214, 207, 207);
+    gap:12px;
+    padding:10px 12px;
+    border-radius: 12px;
+    margin:12px;
+}
+
+.search-list-container svg{
+    color:gray;
+    flex-shrink: 0;
+}
+.search-input-jobs{
+    width: 100%;
+    border:none;
+    outline: none;
+    font-family: 'DM Sans' , 'Plus Jakarta Sans';
+}
+
+.mobile-view-filter{
+    display:none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 50%;
+    padding: 10px 36px 10px 14px;
+    margin: 12px;
+    font-family: 'DM Sans', 'Plus Jakarta Sans';
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid rgb(214, 207, 207);
+    border-radius: 12px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    cursor: pointer;
+}
+.mobile-view-filter:focus{
+    outline: none;
+    border-color: #999;
+}
+
+/* Job Table */
+.job-table{
+    width: 100%;
+}
+/* .mobile-view-filter */
+@media (min-width: 330px) and (max-width: 480px) {
+    .segment-search{
+        display:none;
+    }
+    .mobile-view-filter{
+        display: block;
+        align-self: start;
+    }
+}
