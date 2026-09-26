@@ -1,7 +1,194 @@
-.applied-list{
-    padding:10px 16px;
+.applied-list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 16px;
+    gap:5px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    position: relative;
+    cursor: pointer;
 }
-.company-img{
-    width: 38px;
-    height: 38px;
+
+.checkbox-cell {
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+}
+
+.company-cell {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.company-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.title-cell {
+    flex: 2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.inner-cell {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    gap: 5px;
+}
+
+.company-salary,
+.company-date,
+.interview-type,
+.interview-stage{
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.option-applied-list{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    right:1%;
+    padding:8px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.option-applied-list:hover{
+    background-color: rgb(243, 231, 231);
+}
+.company-location{
+    color:gray;
+    font-size:0.75rem;
+}
+.company-job-title{
+    color:gray;
+    font-size:0.85rem;
+}
+.company-salary{
+    color:gray;
+    font-size:0.85rem;
+}
+.company-date{
+    color:gray;
+    font-size:0.85rem;
+}
+.interview-type{
+    color:gray;
+    font-size:0.85rem;
+}
+.interview-stage-inner-container{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    gap:5px;
+    border:1px solid rgb(230, 230, 230);
+    padding:5px 7px;
+    border-radius: 12px;
+    width: 50%;
+    text-align: start;
+}
+.interview-stage{
+    color:gray;
+    font-size:0.85rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.stage-status {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.rejected-color{
+    background-color:red;
+}
+.pending-color{
+    background-color:orange;
+}
+.shortlisted-color{
+    background-color:green;
+}
+@media (max-width: 640px) {
+  .applied-list {
+    position: relative; 
+    display: block;
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 1px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  .applied-list:last-child{
+    border:none;
+    box-shadow:none;
+  }
+
+  .checkbox-cell,
+  .option-applied-list {
+    display: none;
+  }
+
+  .company-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  .interview-stage {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  .interview-stage-inner-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    width: auto;
+  }
+
+  .stage-status {
+    display: none;
+  }
+
+  .title-cell,
+  .company-salary,
+  .company-date,
+  .interview-type {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  .title-cell::before,
+  .company-salary::before,
+  .company-date::before,
+  .interview-type::before {
+    content: attr(data-label);
+    color: #9a9a9a;
+  }
+
+  .inner-cell {
+    display: block;
+    padding-top: 8px;
+    width: 100%;
+  }
 }

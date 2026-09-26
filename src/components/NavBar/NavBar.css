@@ -151,6 +151,7 @@
 @media (max-width:480px) {
     .navbar-container{
         width: 220px;
+        height: auto;
     }
     .navbar-toggle{
         width:70px;

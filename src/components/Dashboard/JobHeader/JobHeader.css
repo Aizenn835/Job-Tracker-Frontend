@@ -30,7 +30,13 @@ input[type="checkbox"] {
     width: 50%;
     gap:5px;
 }
-
+.salary-cell,
+.date-cell,
+.type-cell,
+.stage-cell {
+    flex: 1;
+    text-align: center;
+}
 @media (max-width: 480px) {
     .job-list-header{
         display: none;
