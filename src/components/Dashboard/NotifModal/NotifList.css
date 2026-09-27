@@ -1,0 +1,42 @@
+.notif-list-container{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    overflow: hidden;
+    gap:10px;
+}
+.notif-list-img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notif-img{
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+    display:flex;
+    align-items: center;
+    border-radius: 50%;
+}
+.inner-name-notif-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:2px;
+}
+.name-dsc-inner-container{
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+.notif-name{
+    font-weight: 550;
+}
+.notif-dsc{
+    color:rgb(117, 110, 110);
+    font-size:0.925rem;
+}
+.notif-time-role{
+    color:rgb(117, 110, 110);
+    font-size:0.825rem;
+}

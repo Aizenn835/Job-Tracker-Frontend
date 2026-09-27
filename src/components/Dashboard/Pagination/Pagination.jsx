@@ -4,7 +4,8 @@ import './Pagination.css'
 export default function Pagination(){
     return(
         <div className="footer-pagination-container">
-            <button className="footer-btn">
+            <div className="footer-inner-container">
+                <button className="footer-btn">
                 <IconArrowNarrowLeft stroke={2} size={25}/> 
                 <span className='footer-btn-text'>Previous</span>
             </button>
@@ -21,6 +22,11 @@ export default function Pagination(){
                 <span className='footer-btn-text'>Next</span>
                 <IconArrowNarrowRight stroke={2} size={25}/>
             </button>
+            </div>
+
+            <div className="mobile-view-pagination">
+                <span>Load More Application</span>
+            </div>
         </div>
     );
 }

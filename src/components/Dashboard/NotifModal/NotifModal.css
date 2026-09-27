@@ -1,0 +1,103 @@
+.notif-modal{
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.20);
+    border-radius: 12px;
+    padding:10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    position: absolute;
+    z-index: 3000;
+    top:60%;
+    right: 4%;
+    opacity: 0;
+    transform: translateX(250%);
+    transition: opacity 0.1s ease , transform 0.3s ease;
+    pointer-events: none;
+
+}
+.notif-active-state{
+    opacity:1;
+    transform: translateX(0);
+    pointer-events: auto
+}
+.notif-modal-header{
+    margin-top:12px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.notif-modal-header span{
+    text-decoration: underline;
+    font-size:0.85rem;
+    cursor: pointer;
+    font-weight: 550;
+}
+.eyebrow{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgb(214, 207, 207);
+    width: 100%;
+    justify-self: center;
+    padding:10px 12px;
+    border-radius: 20px;
+    align-self: center;
+    gap:12px;
+}
+.notif-list{
+    margin-top:12px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap:15px;
+}
+.active-tab{
+    padding:7px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 550;
+    font-size:0.825rem;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    user-select: none;
+}
+.notif-btn-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:12px;
+}
+.see-all-notif-btn{
+    width: 100%;
+    max-width: 200px;
+    background-color: #fff;
+    border:none;
+    text-decoration: underline;
+    text-align: center;
+    font-weight: 550;
+    cursor: pointer;
+    font-family: 'DM Sans' , 'Plus Jakarta Sans';
+}
+/* Active notification choice All / Unread */
+.active{
+    background-color: rgb(38, 37, 37);
+    color: #fff;
+}
+@media (min-width: 330px) and (max-width: 480px) {
+    .notif-modal{
+    background-color: #fff;
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    z-index: 5000;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.20);
+    top:70%;
+    }
+}

@@ -1,12 +1,16 @@
 import Search from '../SearchDashboard/Search.jsx'
-import { IconChartBar ,  IconBell , IconPlus} from '@tabler/icons-react';
+import { IconChartBar ,  IconBell , IconPlus} from '@tabler/icons-react'
+import NotificationModal from '../NotifModal/NotifModal.jsx'
 import './DashboardHeader.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react'
 
 export default function Dashboard(){
     const [notifCount , setNotifCount] = useState(2);
+    const [isModalOpen , setIsModalOpen] = useState(false);
 
-
+    function counter(){
+       setIsModalOpen(!isModalOpen);
+    }
     return(
         <div className="dashboard-container">
             <div className="dashboard-header">
@@ -17,7 +21,7 @@ export default function Dashboard(){
                 <div className="search-inner-container">
                     <Search />
                     <div className="header-notif-add-container">
-                        <div className='icon-dashboard-ntf'>
+                        <div className='icon-dashboard-ntf' onClick={() => {counter()}}>
                             <IconBell stroke={1.90} size={20}/>
                             {notifCount > 0 && (
                                 <div className="ntf-counter">
@@ -31,6 +35,7 @@ export default function Dashboard(){
                     </div>
                 </div>
             </div>
+            <NotificationModal isModalOpen={isModalOpen}/>
         </div>
     );
 }

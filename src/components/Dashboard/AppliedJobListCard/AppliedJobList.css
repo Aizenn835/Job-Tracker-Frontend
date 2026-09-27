@@ -6,6 +6,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border-radius: 12px;
     flex-direction: column;
+
 }
 .segment-search{
     display: flex;
@@ -13,7 +14,7 @@
     width: 100%;
     padding:10px 12px;
     gap:12px;
-    border:1px solid gb(200, 197, 197);
+   
     
 }
 .search-list-container{

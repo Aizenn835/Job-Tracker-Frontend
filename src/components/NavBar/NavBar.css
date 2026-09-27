@@ -5,23 +5,24 @@
 }
 .navbar-container{
     width: 220px;    
-    height: 100vh; 
     flex-shrink: 0;
     background-color: #fff;
     border-right: 1px solid rgb(214, 207, 207);
     transition: width 0.3s ease;
+    min-height: 100vh;   
+    position: relative;
 }
 .navbar-toggle{
     width:70px;
 }
-/* margin here are the gap in nav */
+
 .nav-header{
     display:flex;
     align-items: center;
     gap:12px;
     padding:10px 12px;
     border-bottom: 1px solid rgb(214, 207, 207);
-    margin:0 12px 20px 12px;  
+    margin:0 12px 20px 12px; 
 }
 .logo-img-container{
     display:flex;
@@ -56,7 +57,6 @@
 }
 .nav-list{
    margin:12px;
-   position: relative;
 }
 .nav-dsc{
     color:rgb(66, 63, 63);
@@ -100,22 +100,24 @@
 
 /* User profile */
 .user-profile{
-    position:fixed;
+    position: absolute;   
     bottom: 1%;
+    display:flex;
     align-items: center;
     width: 100%;
     max-width: 200px;
     cursor: pointer;
 }
 .open-profile-container{
+    border-top:1px solid rgb(200, 197, 197);
     padding-top:12px;
     display: flex;
     gap:12px;
     align-items: center;
     overflow:hidden;
-    border-top:1px solid rgb(200, 197, 197);
     opacity: 0;
     transition: opacity 0.2s ease;
+    width: 100%;
 }
 .user-profile-img{
     height:38px;
