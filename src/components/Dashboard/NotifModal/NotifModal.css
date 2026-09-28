@@ -87,7 +87,7 @@
 }
 /* Active notification choice All / Unread */
 .active{
-    background-color: rgb(38, 37, 37);
+    background-color: #2563eb;
     color: #fff;
 }
 @media (min-width: 330px) and (max-width: 480px) {
