@@ -43,7 +43,7 @@ export default function AppliedList(props){
             <div className="inner-cell">
                 <div className="company-salary" data-label="Pay">{formatSalaryRange(minimumSalary, maximumSalary)}</div>
                 <div className="company-date"  data-label="Date">{interviewDate}</div>
-                <div className="interview-type" data-label="Mode">{interviewType}</div>
+                <div className="interview-type" data-label="Mode">{formatEnum(interviewType)}</div>
                 <div className="interview-stage">
                     <div className='interview-stage-inner-container '>
                         <div className={`stage-status ${stageClass}`}></div>

@@ -5,26 +5,83 @@ import { IconSearch } from '@tabler/icons-react'
 import './AppliedJobList.css'
 import FooterPagination from '../Pagination/Pagination.jsx'
 import { useEffect, useState } from 'react'
-import { getAppliedJobs } from '@/api/dashboard.jsx'
+import { getAppliedJobs ,  searchInCard } from '@/api/dashboard.jsx'
+import NoAppliedJobs from '@/assets/error-handling-svg/NoDataAvailable.svg'
+import NotFoundDashboard from '@/assets/error-handling-svg/notFoundDsh.svg'
+import toast from 'react-hot-toast'
+import JobSkeleton from '../../Shared/SkeletonLoading.jsx'
 
 const API_URL = "http://localhost:8080";
 
 export default function AppliedJobList(){
     const [jobs , setJobs] = useState([]);
+    const [search , setSearch] = useState("");
     const [isLoading , setIsLoading] = useState(true);
     const [error , setError] = useState(null);
 
+
     useEffect(() => {
-        getAppliedJobs()
-         .then(setJobs)
-         .catch(err => setError(err.message))
-         .finally(() => setIsLoading(false))
-    } , []);
+        let ignore = false;
+        const keyword = search.trim();
 
-      if (isLoading) return <p>Loading...</p>;
-      if (error) return <p>{error}</p>;
+        const timer = setTimeout(() => {
+            const request = keyword ? searchInCard(keyword) : getAppliedJobs();
 
+            request
+                .then((data) => {
+                    if(ignore) return;
+                    setJobs(data);
+                    setError(null);
+                })
+                .catch((err) => {
+                    if(ignore) return;
+                    setError(err.message)
+                    toast.error("Could not load your applied jobs. Please try again.");
+                    console.log("Status: " + err.message);
+                })
+                .finally(() => {
+                    if(!ignore) setIsLoading(false);
+                })  
+        }, keyword ? 400 : 0);
 
+        return () => {
+            ignore = true;
+            clearTimeout(timer);
+        }
+    }, [search])
+
+    function renderAppliedList(){
+        if (isLoading) {
+            return Array.from({ length: 5 }, (_, index) => (
+                <JobSkeleton key={index} />
+            ));
+        }
+        if(jobs.length === 0 && search.trim() === ""){
+            return <div className="table-message">
+                     <img src={NoAppliedJobs} alt="No applied jobs yet." />
+                     <p>No applied jobs yet.</p>
+                   </div>;
+        }
+        if(search.trim() && jobs.length === 0){
+            return <div className="table-message">
+                     <img src={NotFoundDashboard} alt="No application match." />
+                     <p>No application match "{search}" </p>
+                   </div>;
+        }
+        return jobs.map(list => (
+                    <Joblist key={list.id} 
+                             img={`${API_URL + list.imgUrl}`} 
+                             companyName={list.companyName}
+                             location={list.location}
+                             jobTitle={list.jobTitle}
+                             minimumSalary={list.minimumSalary}
+                             maximumSalary={list.maximumSalary}
+                             interviewDate={list.interviewDate}
+                             interviewType={list.interviewType}
+                             stage={list.stage}           
+                    />
+                ));
+    }
 
     return(
         <div className="applied-job-container">
@@ -32,7 +89,7 @@ export default function AppliedJobList(){
                 <SegmentControl />
                 <div className="search-list-container">
                     <IconSearch stroke={2} size={20}/>
-                    <input className='search-input-jobs' type="text" name="job-list-search" placeholder='Search...'/>
+                    <input className='search-input-jobs' type="text" name="job-list-search" placeholder='Search...' onInput={(e) => {setSearch(e.target.value)}}/>
                 </div>
             </div>
             <select name="job-filter" className='mobile-view-filter'>
@@ -43,22 +100,10 @@ export default function AppliedJobList(){
             </select>
             <div className="job-table">
                 <JobHeader />
-                {jobs.map(list => (
-                    <Joblist key={list.id} 
-                             img={`${API_URL + list.imgUrl}`} 
-                             companyName={list.companyName}
-                             location={list.location}
-                             jobTitle={list.jobTitle}
-                             minimumSalary={list.minimumSalary}
-                             maximumSalary={list.maximumSalary}
-                             interviewDate={list.interview_month}
-                             interviewType={list.interview_year}
-                             stage={list.stage}           
-                    />
-                
-                ))}
+                {renderAppliedList()}
             </div>
             <FooterPagination />
         </div>
     );
+    
 }

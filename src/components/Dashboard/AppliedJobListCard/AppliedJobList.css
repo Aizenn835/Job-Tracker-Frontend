@@ -14,7 +14,6 @@
     width: 100%;
     padding:10px 12px;
     gap:12px;
-   
     
 }
 .search-list-container{
@@ -64,7 +63,21 @@
     outline: none;
     border-color: #999;
 }
-
+/* Error handling UI UX */
+.table-message{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.table-message img{
+    height: 250px;
+    width: 250px;
+}
+.table-message p{
+    color:rgb(89, 86, 86);
+    font-size:1.062rem;
+}
 /* Job Table */
 .job-table{
     width: 100%;
