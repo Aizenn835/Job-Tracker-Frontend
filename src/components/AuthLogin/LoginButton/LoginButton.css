@@ -1,0 +1,26 @@
+.login-button-container{
+    width: 100%;
+    max-width: 400px;
+    background-color: #2563eb;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:12px;
+    border:none;
+    border-radius: 12px;
+    cursor: pointer;
+    gap:5px;
+    transition:transform 0.5s ease;
+}
+.login-button-container:hover{
+    transform: scale(0.95);
+}
+.login-button-container svg{
+    color:#fff;
+}
+.login-button-container p{
+    font-size:0.925rem;
+    color:#fff;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}

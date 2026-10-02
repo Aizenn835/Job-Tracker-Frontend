@@ -1,0 +1,9 @@
+.footer-acc-text{
+    color:gray;
+    font-size:0.75rem;
+}
+.underline-text{
+    text-decoration: underline;
+    color:black;
+    cursor: pointer;
+}

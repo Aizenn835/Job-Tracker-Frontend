@@ -1,15 +1,16 @@
+import NotFoundDashboard from '@/assets/error-handling-svg/notFoundDsh.svg'
 import SegmentControl from '../SegmentControl/SegmentControl.jsx'
 import JobHeader from '../JobHeader/JobHeader.jsx'
 import Joblist from '../AppliedList/AppliedList.jsx'
 import { IconSearch } from '@tabler/icons-react'
-import './AppliedJobList.css'
 import FooterPagination from '../Pagination/Pagination.jsx'
 import { useEffect, useState } from 'react'
 import { getAppliedJobs ,  searchInCard } from '@/api/dashboard.jsx'
-import NoAppliedJobs from '@/assets/error-handling-svg/NoDataAvailable.svg'
-import NotFoundDashboard from '@/assets/error-handling-svg/notFoundDsh.svg'
-import toast from 'react-hot-toast'
+import NoAppliedJobs from '@/assets/error-handling-svg/no-data.svg'
 import JobSkeleton from '../../Shared/SkeletonLoading.jsx'
+import toast from 'react-hot-toast'
+import './AppliedJobList.css'
+import ApplicationModal from '../ApplicationModal/ApplicationModal.jsx'
 
 const API_URL = "http://localhost:8080";
 
@@ -17,7 +18,6 @@ export default function AppliedJobList(){
     const [jobs , setJobs] = useState([]);
     const [search , setSearch] = useState("");
     const [isLoading , setIsLoading] = useState(true);
-    const [error , setError] = useState(null);
 
 
     useEffect(() => {
@@ -31,11 +31,10 @@ export default function AppliedJobList(){
                 .then((data) => {
                     if(ignore) return;
                     setJobs(data);
-                    setError(null);
+
                 })
                 .catch((err) => {
                     if(ignore) return;
-                    setError(err.message)
                     toast.error("Could not load your applied jobs. Please try again.");
                     console.log("Status: " + err.message);
                 })
@@ -62,7 +61,7 @@ export default function AppliedJobList(){
                      <p>No applied jobs yet.</p>
                    </div>;
         }
-        if(search.trim() && jobs.length === 0){
+        if(jobs.length === 0 && search.trim()){
             return <div className="table-message">
                      <img src={NotFoundDashboard} alt="No application match." />
                      <p>No application match "{search}" </p>
@@ -82,7 +81,6 @@ export default function AppliedJobList(){
                     />
                 ));
     }
-
     return(
         <div className="applied-job-container">
             <div className="segment-search">
@@ -105,5 +103,4 @@ export default function AppliedJobList(){
             <FooterPagination />
         </div>
     );
-    
 }

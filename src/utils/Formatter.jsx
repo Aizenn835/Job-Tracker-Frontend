@@ -19,3 +19,15 @@ export function formatSalaryRange(min, max) {
 
     return `${format(min)} - ${format(max)}`;
 }
+
+export function formatDate(dateString) {
+    if (!dateString) return "No interview yet";
+    return new Date(dateString).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
+}
+export function validateEmail(email){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}

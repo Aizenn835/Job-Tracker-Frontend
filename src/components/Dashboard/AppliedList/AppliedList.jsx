@@ -1,6 +1,7 @@
 import './AppliedList.css'
 import { IconDotsVertical } from '@tabler/icons-react';
-import { formatEnum , formatSalaryRange} from '@/utils/Formatter';
+import { formatEnum , formatSalaryRange , formatDate} from '@/utils/Formatter.jsx';
+import { useState } from 'react';
 
 const stageClassMap = {
     "REJECTED" : "rejected-color",
@@ -9,6 +10,7 @@ const stageClassMap = {
 }
 
 export default function AppliedList(props){
+    
     const {
         img ,
         companyName,
@@ -26,7 +28,7 @@ export default function AppliedList(props){
     return(
         <div className="applied-list">
             <div className="checkbox-cell">
-                <input type="checkbox" />
+                <input type="checkbox"/>
             </div>
             <div className="company-cell">
                 <div className="img-container-list">
@@ -42,7 +44,7 @@ export default function AppliedList(props){
             </div>
             <div className="inner-cell">
                 <div className="company-salary" data-label="Pay">{formatSalaryRange(minimumSalary, maximumSalary)}</div>
-                <div className="company-date"  data-label="Date">{interviewDate}</div>
+                <div className="company-date"  data-label="Date">{formatDate(interviewDate)}</div>
                 <div className="interview-type" data-label="Mode">{formatEnum(interviewType)}</div>
                 <div className="interview-stage">
                     <div className='interview-stage-inner-container '>

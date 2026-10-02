@@ -71,6 +71,7 @@
     justify-content: center;
 }
 .table-message img{
+    margin-top:12px;
     height: 250px;
     width: 250px;
 }
