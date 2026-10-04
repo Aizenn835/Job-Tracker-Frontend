@@ -1,6 +1,8 @@
 .footer-acc-text{
     color:gray;
     font-size:0.75rem;
+    display:flex;
+    gap:5px;
 }
 .underline-text{
     text-decoration: underline;

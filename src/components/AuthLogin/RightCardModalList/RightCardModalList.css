@@ -1,0 +1,62 @@
+.card-modal-list{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.right-list{
+    display:flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding:10px;
+}
+.right-card-logo-container{
+    padding: 10px 12px;
+    margin-right: 12px;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.90rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.first-logo{background-color: rgb(220, 113, 220);}
+.second-logo{ background-color: rgb(38, 35, 35);}
+.third-logo{ background-color: rgb(76, 76, 181);}
+.fourth-logo{background-color: rgb(170, 147, 112);}
+
+.card-modal-list-inner-container{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-company-name{
+    font-size:0.925rem;
+    font-weight: 700;
+}
+.card-role{
+    font-size:0.825rem;
+    color:rgb(128, 123, 123);
+}
+.card-status{
+    font-size: 0.75rem;
+    padding:5px 7px;
+    border-radius: 12px;
+}
+.interview{
+    background-color: rgb(194, 148, 79);
+    color:rgb(243, 239, 237);
+}
+.rejected{
+    background-color: rgb(223, 76, 50);
+    color:rgb(243, 229, 228); 
+}
+.shortlisted{
+    background-color: rgb(29, 179, 18);
+    color:rgb(239, 245, 236); 
+}

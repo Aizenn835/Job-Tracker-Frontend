@@ -30,11 +30,11 @@ export default function LeftCard(){
             loginButtonText: "Create Account",
         },
     };
-    const current = formContent[activeForm];
     const email = emailInput.trim();
     const password = passwordInput.trim();
-    const hasMinLength = passwordInput.length >= 8;
-    const hasNumberOrSymbol = /[0-9!@#$%^&*(),.?":{}|<>]/.test(passwordInput);
+    const current = formContent[activeForm];
+    const hasMinLength = password.length >= 8;
+    const hasNumberOrSymbol = /[0-9!@#$%^&*(),.?":{}|<>]/.test(password);
     
     return(
         <div className="left-card-container">
@@ -71,7 +71,7 @@ export default function LeftCard(){
                     <div className="form-login-container">
                         <p className='inputIdentifier'>Password</p>
                         <div className="inner-login-form-container">
-                            <IconLock stroke={2} size={21} className='password-svg'/>
+                            <IconLock stroke={2} size={22} className='password-svg'/>
                             <input 
                                 type={isPasswordShown ? "text" : "password"} 
                                 className='form-login-input' 

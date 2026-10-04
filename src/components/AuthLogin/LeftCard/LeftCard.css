@@ -100,9 +100,11 @@
 
 .email-svg{
     color:rgb(152, 150, 150);
+    flex-shrink: 0;
 }
 .form-checkmark{
     color: green;
+    flex-shrink: 0;
 }
 .email-invalid{
     color:rgb(235, 23, 23);
@@ -206,7 +208,7 @@
 
 /* Responsiveness */
 
-@media (max-width: 768px){
+@media (max-width: 1280px){
     .inner-left-card-container{
         position: static;
         bottom: auto;

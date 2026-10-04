@@ -1,6 +1,7 @@
 .right-card-container{
     width: 100%;
-    height:100vh;
+    height: 100vh;
+    position: relative;
 }
 .image-background-container {
   position: relative;
@@ -9,7 +10,6 @@
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
-
 .login-form-img {
   position: absolute;
   inset: 0;
@@ -17,8 +17,113 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  user-select: none;
 }
-@media (max-width: 768px) {
+.top-left-card-content{
+  position: absolute;
+  top: 5%;
+  right: 85%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.top-left-card-content svg{
+  color: #ffffff;
+}
+.top-left-content-text{
+  color: #ffffff;
+  font-weight: 500;
+}
+.top-right-card-content{
+  position: absolute;
+  top: 5%;
+  left: 84%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.green-circle {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+}
+.orange-circle{
+  width: 8px;
+  height: 8px;
+  background-color: orange;
+  border-radius: 50%;
+  font-weight: 500;
+}
+.top-right-content-text{
+  color: #ffffff;
+  font-size:0.865rem;
+  font-weight: 500;
+}
+.top-second-right-card-content{
+  width: 100%;
+  max-width: 140px;
+  position: absolute;
+  top: 10%;
+  left: 84%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.bottom-left-card-content{
+  position: absolute;
+  bottom: 5%;
+  right: 81%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 10px 12px;
+
+}
+.bck-card-content{
+  background-color: #2563eb;
+  padding:8px 10px;
+  color:#ffffff;
+  border-radius: 5px;
+  font-size: 0.865rem;
+  font-weight: 500;
+}
+.supporting-top-right-text{
+  color:rgb(186, 181, 181);
+  font-size: 0.75rem;
+   font-weight: 500;
+}
+@media (max-width: 1280px) {
+  .left-right-card-content {
+    display: none;
+  }
   .right-card-container {
     display: none;
   }
