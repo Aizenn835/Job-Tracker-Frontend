@@ -1,5 +1,5 @@
 import LeftCard from './LeftCard/LeftCard.jsx'
-import RightCard from './RightCard/RightCard.jsx'
+import RightCard from './RightCard/RightCard.jsx';
 import './Login.css'
 
 export default function(){

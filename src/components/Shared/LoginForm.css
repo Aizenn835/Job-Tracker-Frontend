@@ -1,0 +1,94 @@
+.auth-form{
+    width: 100%;
+    max-width: 500px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+}
+.form-login{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    gap:12px;
+}
+.content-form{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    gap:3px;
+    justify-content: center;
+}
+.content-form p{
+    font-size:0.925rem;
+    font-weight: 600;
+    color:rgb(82, 79, 79);
+}
+.inner-login-form{
+    display:flex;
+    align-items: center;
+    width: 100%;
+    border:1px solid rgb(211, 205, 205);
+    padding:12px;
+    border-radius: 8px;
+    gap:10px;
+    transition: box-shadow 0.5s ease;
+}
+.inner-login-form:focus-within{
+    box-shadow: #7f9dde 0px 2px 8px 0px;
+}
+.input-login-form{
+    border:none;
+    width: 100%;
+    background-color: #f5f7fa;
+    outline: none;
+    font-weight: 450;
+    color:rgb(62, 61, 61);
+}
+
+.svgIcon{
+    color:rgb(152, 150, 150);
+     flex-shrink: 0;
+     cursor: pointer;
+}
+.footer-password-outer-container{
+    margin-top:5px;
+}
+.password-footer-container{
+    display:flex;
+    align-items: center;
+    gap:5px;
+}
+.password-footer-container.accepted p{
+    color:rgb(31, 157, 31);
+}
+.password-footer-container.accepted svg{
+    color:rgb(31, 157, 31);
+}
+.password-footer-container svg{
+    color:gray;
+}
+.password-footer-container p{
+    color:gray;
+    font-size:0.75rem;
+}
+.password-footer-container {
+  color: #6b7280; 
+}
+.form-checkmark{
+    color:green;
+}
+.email-invalid{
+    color:red;
+}
+
+/* fullname container */
+.fullname-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:12px;
+}

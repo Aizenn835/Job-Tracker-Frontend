@@ -1,4 +1,4 @@
-import BackgroundImgLogin from '@/assets/login-background.png'
+import BackgroundImgLogin from '@/assets/blurry-gradient-haikei.png'
 import { IconDeviceIpadHorizontalSearch } from '@tabler/icons-react';
 import RightCardModal from '../RightCardModal/RightCardModal';
 import './RightCard.css'
@@ -32,4 +32,3 @@ export default function RightCard() {
     </div>
   )
 }
-

@@ -1,19 +1,17 @@
 import Logo from '@/assets/brand-logo.svg'
-import { IconMail , IconCircleCheck ,IconArrowBarToRight, IconUserPlus ,  IconLock , IconEye , IconEyeOff , IconCircleX} from '@tabler/icons-react'
+import {IconArrowBarToRight, IconUserPlus} from '@tabler/icons-react'
 import LeftCardHeader from '../LeftCardHeader/LeftCardHeader.jsx'
-import LoginButton from '../LoginButton/LoginButton.jsx'
 import GoogleLogo from '@/assets/login/Google.png'
 import { FaFacebookF } from "react-icons/fa6";
 import FooterText from '../FooterText/FooterText.jsx'
-import { validateEmail} from '@/utils/Formatter.jsx'
+import LoginForm from '../LoginForm/LoginForm.jsx'
+import SignUpForm from '../SignUpForm/SignUpForm.jsx';
 import './LeftCard.css'
 import { useState } from 'react'
+import { HiH3 } from 'react-icons/hi2'
 
 export default function LeftCard(){
     const [activeForm , setActiveForm] = useState("login");
-    const [emailInput , setEmailInput] = useState("");
-    const [passwordInput , setPasswordInput] = useState("");
-    const [isPasswordShown , setIsPasswordShown] = useState(false);
     const formContent = {
         login: {
             header: "Welcome Back",
@@ -30,12 +28,8 @@ export default function LeftCard(){
             loginButtonText: "Create Account",
         },
     };
-    const email = emailInput.trim();
-    const password = passwordInput.trim();
     const current = formContent[activeForm];
-    const hasMinLength = password.length >= 8;
-    const hasNumberOrSymbol = /[0-9!@#$%^&*(),.?":{}|<>]/.test(password);
-    
+ 
     return(
         <div className="left-card-container">
             <div className="inner-left-card-container">
@@ -55,50 +49,12 @@ export default function LeftCard(){
                         <span className='form-text'>SignUp</span>
                     </div>
                 </div>
-                <div className="form-grid">
-                    <div className="form-login-container">
-                        <p className='inputIdentifier'>Email</p>
-                        <div className="inner-login-form-container">
-                            <IconMail stroke={2} size={20} className='email-svg'/>
-                            <input type="text" className='form-login-input' placeholder='you@example.com' onChange={(e) => {setEmailInput(e.target.value)}}/>
-                            {email.length > 0 && (
-                                validateEmail(email) 
-                                    ? <IconCircleCheck stroke={2} size={21} className='form-checkmark' />
-                                    : <IconCircleX stroke={2} size={21} className='email-invalid' />
-                            )}
-                        </div>
-                    </div>
-                    <div className="form-login-container">
-                        <p className='inputIdentifier'>Password</p>
-                        <div className="inner-login-form-container">
-                            <IconLock stroke={2} size={22} className='password-svg'/>
-                            <input 
-                                type={isPasswordShown ? "text" : "password"} 
-                                className='form-login-input' 
-                                placeholder='Enter your password' 
-                                value={passwordInput}
-                                onChange={(e) => {setPasswordInput(e.target.value)}}
-                            />
-                            {
-                            isPasswordShown ?
-                            <IconEye stroke={2} size={21} className='show-password' onClick={() => {setIsPasswordShown(false)}}/> : 
-                            <IconEyeOff stroke={2} size={21} className='show-password' onClick={() => {setIsPasswordShown(true)}}/> 
-                            }
-                        </div>
-                        <div className="footer-password-outer-container">
-                            <div className={`password-footer-container ${hasMinLength ? "requirement-met" : ""}`}>
-                                <IconCircleCheck stroke={2} size={15}/>
-                                <p>Must be at least 8 characters</p>
-                            </div>
-                            <div className={`password-footer-container ${hasNumberOrSymbol ? "requirement-met" : ""}`}>
-                                <IconCircleCheck stroke={2} size={15}/>
-                                <p>Must contain at least one number or symbol</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                {activeForm === "login" ? 
+                <LoginForm /> : 
+                <SignUpForm />}
 
-                <LoginButton LoginButtonText={current.loginButtonText}/> 
+            
                 <div className="continue-container">
                     <div className="separator-login"></div>
                     <span className='continue-text'>Continue With</span>
