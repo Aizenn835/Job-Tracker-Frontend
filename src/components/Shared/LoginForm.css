@@ -13,7 +13,7 @@
     justify-content: center;
     width: 100%;
     max-width: 400px;
-    gap:12px;
+    gap:20px;
 }
 .content-form{
     width: 100%;
@@ -91,4 +91,10 @@
     align-items: center;
     justify-content: center;
     gap:12px;
+}
+
+/* validation */
+.field-error{
+    font-size:0.75rem;
+    color:red;
 }

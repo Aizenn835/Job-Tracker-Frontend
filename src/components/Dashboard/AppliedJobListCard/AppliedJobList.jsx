@@ -6,11 +6,11 @@ import { IconSearch } from '@tabler/icons-react'
 import FooterPagination from '../Pagination/Pagination.jsx'
 import { useEffect, useState } from 'react'
 import { getAppliedJobs ,  searchInCard } from '@/api/dashboard.jsx'
+import { dashboardErrorMessage } from "../../../utils/Formatter"
 import NoAppliedJobs from '@/assets/error-handling-svg/no-data.svg'
 import JobSkeleton from '../../Shared/SkeletonLoading.jsx'
 import toast from 'react-hot-toast'
 import './AppliedJobList.css'
-import ApplicationModal from '../ApplicationModal/ApplicationModal.jsx'
 
 const API_URL = "http://localhost:8080";
 
@@ -29,13 +29,12 @@ export default function AppliedJobList(){
 
             request
                 .then((data) => {
-                    if(ignore) return;
+                    if(ignore) return;      
                     setJobs(data);
-
                 })
                 .catch((err) => {
                     if(ignore) return;
-                    toast.error("Could not load your applied jobs. Please try again.");
+                    dashboardErrorMessage(err);
                     console.log("Status: " + err.message);
                 })
                 .finally(() => {

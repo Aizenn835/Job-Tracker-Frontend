@@ -1,3 +1,5 @@
+import toast from 'react-hot-toast';
+
 const USERNAME_PATTERN = /^[a-zA-Z0-9._-]+$/;
 const LASTNAME_FIRSTNAME_MAX = 50;
 const LASTNAME_FIRSTNAME_PATTERN = /^[\p{L} '.-]+$/u;
@@ -75,9 +77,41 @@ export function validateName(value) {
     }
 
     if (!LASTNAME_FIRSTNAME_PATTERN.test(lastname)) {
-        return "Last name can only contain letters, spaces, apostrophes, dots, or hyphens";
+        return "Last name can only contain letters, spaces";
     }
 
     return "";
+}
+export function getLoginErrorMessage(err) {
+    if (err.status === 401 || err.status === 403 || err.status === 404) {
+        return "Incorrect email or password.";
+    }
+    if (err.status === 400) {
+        return "Please check your email and password.";
+    }
+    if (err.status >= 500) {
+        return "Something went wrong on our side. Please try again later.";
+    }
+    return "Cannot reach the server. Check your connection and try again.";
+}
+
+export function getSignupErrorMessage(err) {
+    if (err.status === 409) {
+        return "That email or username is already taken.";
+    }
+    if (err.status === 400) {
+        return "Please check your details and try again.";
+    }
+    if (err.status >= 500) {
+        return "Something went wrong on our side. Please try again later.";
+    }
+    return "Cannot reach the server. Check your connection and try again.";
+}
+
+export function dashboardErrorMessage(err){
+    if(err.status === 404){
+        return toast.error("Could not load your applied jobs. Please try again.");
+    }
+    return toast.error("Something went wrong. Please try again later.");
 }
 
